@@ -1,0 +1,498 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    font-weight: bold;
+    src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'), url('../fonts/BebasNeue-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'fot-udkakugoc80-pro';
+    src: url('../fonts/BN_NTUDKakugoC80Pro-B.woff2') format('woff2'), url('../fonts/BN_NTUDKakugoC80Pro-B.woff') format('woff');
+}
+
+html {
+    font-size: 18px;
+    font-family: YuGothic, Yu Gothic Medium, Yu Gothic, sans-serif;
+    font-feature-settings: "palt";
+    line-height: 1.5;
+    --primary-color: #FF6803;
+    --comic-font: fot-udkakugoc80-pro, sans-serif;
+    --impact-font: Bebas Neue, sans-serif;
+    --window-size: calc(100vw / 1280);
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        --window-size: calc(100vw / 375);
+    }
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+}
+
+body.modal {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+button {
+    font-size: inherit;
+}
+
+ul {
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+li {
+    list-style: none;
+}
+
+dl {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 2em;
+}
+
+img.comic {
+    max-width: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    display: block;
+}
+
+img.text,
+img.kunai,
+img.img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.main-wrap {
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    background-color: #FF6803;
+    
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    background-color: #FF6803;
+    padding: 10px 20px;
+}
+
+.official-btn {
+    position: relative; 
+   
+    height: 100px;
+    width: 100px;
+    animation: headerAnime 200ms 2500ms linear forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation-fill-mode: forwards;
+}
+
+.official-btn img {
+    height: 100%;
+    width: auto;
+}
+
+.othercomponent {
+    display: flex;
+    gap: 20px;
+}
+
+.othercomponent a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+
+}
+
+.othercomponent a:hover {
+    color: #ff0000; /* Highlight color on hover */
+}
+
+@keyframes headerAnime {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.langage-switch {
+    position: fixed;
+    top: min(calc(9 * var(--window-size)), 9px);
+    right: min(calc(11 * var(--window-size)), 11px);
+    z-index: 2;
+    display: flex;
+    width: 70px;
+    height: 30px;
+    opacity: 0;
+    transform: translateY(max(calc(-100 * var(--window-size)), -100px));
+    animation: headerAnime 200ms 2500ms linear forwards;
+}
+
+.langage-switch .btn {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--impact-font);
+    font-size: 16px;
+    line-height: .8;
+    text-decoration: none;
+    background-color: rgba(163, 163, 163, .3);
+    color: black;
+}
+
+.langage-switch .btn.-jp {
+    border-radius: 20px 0 0 20px;
+    padding-left: 3px;
+}
+
+.langage-switch .btn.-en {
+    border-radius: 0 20px 20px 0;
+    padding-right: 3px;
+}
+
+.langage-switch .btn.now {
+    background-color: black;
+    color: white;
+}
+
+@keyframes headerAnime {
+    0% {
+        opacity: 0;
+        transform: translateY(max(calc(-100 * var(--window-size)), -100px));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inner-wrap {
+    max-width: min(calc(1110 * var(--window-size)), 1110px);
+    margin: auto;
+}
+
+.heading-title {
+    text-align: center;
+}
+
+.heading-title .title {
+    clip-path: polygon(0 -50%, 0 -50%, 0 150%, 0 150%);
+    filter: blur(5px);
+    transition: clip-path 200ms 200ms ease-in, filter 400ms 200ms ease-in;
+}
+
+.heading-title.mask .title {
+    clip-path: polygon(0 -50%, 100% -50%, 100% 150%, 0 150%);
+    filter: blur(0);
+}
+
+.sp_only {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .official-btn {
+        height: calc(52 * var(--window-size));
+        top: calc(6 * var(--window-size));
+        left: calc(10 * var(--window-size));
+    }
+    .sp_only {
+        display: block;
+    }
+    .pc_only {
+        display: none;
+    }
+    .inner-wrap {
+        max-width: calc(355 * var(--window-size));
+        margin: auto;
+    }
+}
+
+.global-footer {
+    padding: 40px 24px 31px;
+    background: black;
+    position: relative;
+    z-index: 1;
+}
+
+:lang(en) .global-footer {
+    font-family: HelveticaNeue-CondensedBold;
+    letter-spacing: 0.075em;
+}
+
+.global-footer .flex-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.global-footer .company {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.global-footer .company .shueisha {
+    height: 38.49px;
+    margin-right: 40px;
+}
+
+.global-footer .credit {
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic";
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 2.4;
+    color: #fff;
+    margin: 24px 0 0;
+}
+
+:lang(en) .global-footer .credit {
+    font-family: HelveticaNeue-CondensedBold;
+    letter-spacing: 0.075em;
+}
+
+.global-footer .menu-list {
+    display: flex;
+    padding-inline-start: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic";
+    font-weight: bold;
+}
+
+.global-footer .menu-item {
+    margin-right: 28px;
+    position: relative;
+}
+
+.global-footer .menu-item:last-child {
+    margin-right: 0;
+}
+
+.global-footer .menu-item .link {
+    display: inline-block;
+    font-size: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.global-footer .menu-item::after {
+    content: "";
+    width: 1px;
+    height: 13px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+}
+
+.global-footer .menu-item .link:hover {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+.global-footer .menu-item:last-child::after {
+    display: none;
+}
+
+.global-footer .pagetop-btn {
+    width: 42px;
+    aspect-ratio: 41/53;
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1023px) {
+    .global-footer {
+        padding: 40px 0 31px;
+        text-align: center;
+    }
+    .global-footer .flex-wrap {
+        display: block;
+        flex-direction: row;
+    }
+    .global-footer .company {
+        display: block;
+        margin-top: 60px;
+    }
+    .global-footer .company .link {
+        display: block;
+    }
+    .global-footer .company .shueisha {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .global-footer .credit {
+        margin: 30px 0 0;
+    }
+    .global-footer .menu-list {
+        width: 294px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-inline-start: 0;
+    }
+    .global-footer .menu-item {
+        width: 50%;
+        margin-right: 0;
+    }
+    .global-footer .menu-item::after {
+        right: 0;
+    }
+    .global-footer .menu-item:nth-child(2):after {
+        display: none;
+    }
+    .global-footer .pagetop-btn {
+        display: none;
+    }
+}
+
+.sns-btn-unit {
+    width: 25px;
+    margin: auto;
+    padding: 16px 6px 10px 6px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 50px;
+    position: relative;
+    left: 5px;
+}
+
+.sns-btn-unit .title {
+    font-size: 12px;
+    font-family: var(--impact-font);
+    transform: rotate(90deg);
+    margin-bottom: 5px;
+}
+
+.sns-btn-unit .icon {
+    margin-top: 13px;
+}
+
+.sns-btn-unit .icon .twitter,
+.sns-btn-unit .icon .facebook,
+.sns-btn-unit .icon .line {
+    fill: #000;
+    transition: .15s ease;
+}
+
+.sns-btn-unit .icon:hover .twitter,
+.sns-btn-unit .icon:hover .facebook,
+.sns-btn-unit .icon:hover .line {
+    fill: var(--primary-color);
+}
+
+@media screen and (max-width: 1023px) {
+    .sns-btn-unit {
+        display: none;
+    }
+}
+
+.sns-share-box {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.sns-share-inner {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+
+@media screen and (max-width:767px) {
+    .sns-share-inner {
+        left: 0;
+    }
+}
+
+.share-set {
+    font-family: var(--comic-font);
+    text-align: center;
+    padding: 36px 0 20px;
+    color: #fff;
+    background-color: #000;
+    position: relative;
+}
+
+.share-set .title {
+    font-size: 20px;
+}
+
+.share-set .sns-unit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0;
+}
+
+.share-set .link {
+    margin-right: 36px;
+}
+
+.share-set .link:last-child {
+    margin-right: 0;
+}
+
+.share-set .pagetop-btn {
+    width: 61px;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    margin: 40px 0 0;
+}
+
+@media screen and (min-width:1024px) {
+    .share-set {
+        display: none;
+    }
+}
+
+.nav{
+   
+    width: 100%;
+    height: 100px;
+    background-color: antiquewhite;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  
+}

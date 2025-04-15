@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica Now Display;
+}
+body {
+    background-color: #16161e;
+    overflow-x: hidden;
+}
+.container1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+@font-face {
+    font-family: Diploma;
+    src: url(./diploma.ttf);
+}
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+#cursor{
+    height: 50px;
+    width: 40px;
+    background-image: url(https://images.freeimages.com/vhq/images/previews/36d/writing-brush-125988.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+.logo {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 0 10px #d14b4b);
+    animation: rotateLogo 8s ease-in-out infinite;
+    z-index: 10;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.85) sepia(0.1) hue-rotate(340deg);
+}
+
+.name {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 130px;
+    height: 60px;
+    transition: transform 0.3s;
+    z-index: 10;
+    background-color: transparent;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.7));
+    border-radius: 5px;
+
+}
+
+.name:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #d14b4b);
+}
+
+h1 {
+    color: #f34747; /* Jiraiya's red markings - brighter */
+    font-size: 80px; 
+    margin-top: 250px;
+    margin-left: 100px;
+    -webkit-text-stroke: 0.1px aliceblue;
+    text-shadow: 3px 3px 10px #000000b3, 0 0 30px #d34b4b80;
+    letter-spacing: 2px;
+    font-family: Diploma;
+    font-weight: bold;
+    position: relative;
+    z-index: 5;
+}
+
+h1::before {
+    content: "木ノ葉隠れの里の伝説"; /* Japanese text for "Legend of the Hidden Leaf" */
+    position: absolute;
+    top: -30px;
+    left: 5px;
+    font-size: 16px;
+    color: #7a9e32;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #f0f0f0;
+    font-size: 18px; 
+    margin-top: 20px;
+    margin-left: 100px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    max-width: 600px;
+    position: relative;
+    z-index: 5;
+}
+
+.container2, .container3, .container4 {
+    background: linear-gradient(135deg, #232323 0%, #0a0a0a 100%);
+    width: 100%;
+    height: 600px;
+    border-top: none;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.container2::before, .container3::before, .container4::before {
+    content: "自来也";  /* Jiraiya in Japanese */
+    position: absolute;
+    font-size: 200px;
+    color: rgba(211, 75, 75, 0.05);
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.container2 img, .container3 img, .container4 img {
+    margin-top: 20px;
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+    z-index: 1;
+    box-shadow: 0 0 29px #d14b4b, 0 0 10px #7a9e32;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container2 img:hover, .container3 video:hover, .container4 img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px #f34747, 0 0 20px #8ab33e;
+}
+
+.material, .material1, .material2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 60px;
+    padding: 20px;
+}
+
+.text, .text1, .text2 {
+    height: 400px;
+    margin-top: 150px;
+    background: rgba(15, 15, 15, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #f34747 #232323;
+}
+
+.text::after, .text1::after, .text2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(211, 75, 75, 0.05) 0%, rgba(122, 158, 50, 0.05) 100%);
+    z-index: -1;
+}
+
+.text:hover, .text1:hover, .text2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.text::-webkit-scrollbar, .text1::-webkit-scrollbar, .text2::-webkit-scrollbar {
+    width: 8px;
+}
+
+.text::-webkit-scrollbar-track, .text1::-webkit-scrollbar-track, .text2::-webkit-scrollbar-track {
+    background: #232323;
+    border-radius: 10px;
+}
+
+.text::-webkit-scrollbar-thumb, .text1::-webkit-scrollbar-thumb, .text2::-webkit-scrollbar-thumb {
+    background: #f34747;
+    border-radius: 10px;
+}
+
+.text::-webkit-scrollbar-thumb:hover, .text1::-webkit-scrollbar-thumb:hover, .text2::-webkit-scrollbar-thumb:hover {
+    background: #8ab33e;
+}
+
+.material h2, .material1 h2, .material2 h2 {
+    color: #f34747; /* Brighter red */
+    font-size: 36px; 
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.material h2::after, .material1 h2::after, .material2 h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #f34747, #8ab33e);
+}
+
+.material p, .material1 p, .material2 p {
+    color: #8ab33e; /* Brighter green */
+    font-size: 18px; 
+    margin-top: 30px;
+    margin-left: 10px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.container4 {
+    height: 700px; 
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 29px #d14b4b, 0 0 10px #7a9e32; }
+    50% { box-shadow: 0 0 50px #f34747, 0 0 25px #8ab33e; }
+    100% { box-shadow: 0 0 29px #d14b4b, 0 0 10px #7a9e32; }
+}
+
+.container4 img {
+    animation: pulseGlow 4s infinite;
+}
+
+/* Toad scroll decoration */
+.container1::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23d14b4b" stroke-width="3"/><circle cx="35" cy="40" r="8" fill="%237a9e32"/><circle cx="65" cy="40" r="8" fill="%237a9e32"/><path d="M30,65 Q50,80 70,65" fill="none" stroke="%23d14b4b" stroke-width="3" stroke-linecap="round"/></svg>');
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 5;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .material, .material1, .material2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .container2 img, .container3 img, .container4 img {
+        width: 90%;
+        height: auto;
+    }
+    
+    .text, .text1, .text2 {
+        margin-top: 20px;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .container2, .container3, .container4 {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    
+    h1 {
+        font-size: 60px;
+        margin-left: 30px;
+        margin-top: 200px;
+    }
+    
+    p {
+        margin-left: 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    .container1::after {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 48px;
+        margin-left: 5vw;
+        margin-top: 180px;
+    }
+
+    p {
+        margin-left: 5vw;
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .material,
+    .material1,
+    .material2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .text,
+    .text1,
+    .text2 {
+        margin-top: 30px;
+        height: auto;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container2 img,
+    .container3 img,
+    .container4 img,
+    .container4 img {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .container2,
+    .container3,
+    .container4 {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .container2::before,
+    .container3::before,
+    .container4::before {
+        font-size: 120px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        margin-top: 120px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .container1::after {
+        width: 60px;
+        height: 60px;
+    }
+
+    #cursor {
+        display: none; /* Hide cursor on small screens */
+    }
+
+    .material h2,
+    .material1 h2,
+    .material2 h2 {
+        font-size: 24px;
+    }
+
+    .material p,
+    .material1 p,
+    .material2 p {
+        font-size: 15px;
+    }
+}

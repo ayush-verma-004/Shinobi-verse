@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <aside class="sidebar">
+      <h2>Community</h2>
+      <ul class="contact-list">
+        <li class="active">Uchiha clan</li>
+        <li>Senzu clan</li>
+        <li>Uzumaki clan</li>
+        <li>Htake clan</li>
+        <li>Kabuya clan</li>
+        <li>Hyuga clan</li>
+        <li>Namikaze clan</li>
+        <!-- Add more if needed -->
+      </ul>
+    </aside>
+
+    <main class="chat-window">
+      <div class="chat-header">Mark Appleyard</div>
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Send a message"/>
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

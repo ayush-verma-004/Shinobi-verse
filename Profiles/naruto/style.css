@@ -1,0 +1,207 @@
+/* Original Desktop Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica Now Display;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.logo {
+  position: fixed;
+  top: 12px;
+  left: 15px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 999;
+  animation: rotateLogo 5s linear infinite;
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container1 h1 {
+  font-family: Diploma;
+  -webkit-text-stroke: 0.2px #42404B;
+  color: #FDEA60;
+  font-size: 50px;
+  margin-top: 15vh;
+  margin-left: 5%;
+  padding-right: 5%;
+}
+
+.container1 p {
+  width: 700px;
+  max-width: 90%;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+/* Common Container Styles */
+.container2,
+.container3,
+.container4 {
+  background-color: #FF9432;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.container2 img,
+.container3 img,
+.container4 img {
+  display: block;
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 29px #000;
+}
+
+/* Material Sections */
+.material,
+.material1,
+.material2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.text,
+.text1,
+.text2 {
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.material h2,
+.material1 h2,
+.material2 h2 {
+  color: #42404B;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.material p,
+.material1 p,
+.material2 p {
+  color: rgb(102, 5, 5);
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .container1 h1 {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .container1 h1 {
+    font-size: 32px;
+    margin-top: 12vh;
+  }
+
+  .container1 p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .container1 h1 {
+    font-size: 28px;
+    -webkit-text-stroke-width: 0.1px;
+  }
+
+  .material,
+  .material1,
+  .material2 {
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+  }
+
+  .text,
+  .text1,
+  .text2 {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .material p,
+  .material1 p,
+  .material2 p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container1 h1 {
+    font-size: 24px;
+    margin-top: 10vh;
+  }
+
+  .container1 p {
+    font-size: 14px;
+  }
+
+  .material h2,
+  .material1 h2,
+  .material2 h2 {
+    font-size: 24px;
+  }
+
+  .material p,
+  .material1 p,
+  .material2 p {
+    font-size: 14px;
+  }
+}
+
+@keyframes rotateLogo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .chat-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background:#FF6803;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .contact-list li.active {
+    background-color: #b74e09;
+  }
+  
+  .chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ecf0f1;
+  }
+  
+  .chat-header {
+    background: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+  }
+  
+  .chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 60%;
+    clear: both;
+  }
+  
+  .message.sent {
+    background-color:  #FF6803;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .message.received {
+    background-color: #bdc3c7;
+    color: black;
+    align-self: flex-start;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ccc;
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .chat-input button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #FF6803;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Add these media queries at the end of your existing CSS */
+
+@media (max-width: 768px) {
+  .chat-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .contact-list li {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .chat-header {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .message {
+    max-width: 80%;
+    font-size: 14px;
+  }
+
+  .chat-input input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .chat-input button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none; /* Hide sidebar on very small screens */
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .chat-input {
+    padding: 8px;
+  }
+}
+
+/* Optional: Add touch-friendly sizing for mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .chat-input input {
+    min-height: 44px;
+  }
+  
+  .chat-input button {
+    min-width: 60px;
+    min-height: 44px;
+  }
+}
+
+/* Add to existing CSS */
+.message {
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    overflow-y: auto; /* Make scrollable if content overflows */
+    max-height: 40vh; /* Limit height for mobile */
+  }
+
+  .contact-list {
+    max-height: 35vh;
+    overflow-y: auto;
+  }
+
+  .chat-container {
+    flex-direction: column;
+    height: 100vh; /* Maintain full viewport height */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-input {
+    gap: 8px; /* Space between input and button */
+    padding: 8px;
+  }
+
+  .chat-input button {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    padding: 12px; /* Larger touch target */
+  }
+}
+
+/* Optional: Better mobile address bar handling */
+@media (max-height: 600px) {
+  .chat-container {
+    min-height: -webkit-fill-available;
+  }
+}

@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container1 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* New background properties */
+    background-image: url('https://wallpaperaccess.com/full/2919205.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center content horizontally */
+    text-align: left;
+}
+.hero-content p{
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-left: 20px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0;
+    margin-left: 100px;
+}
+
+
+.hero-content p {
+    white-space: normal; 
+    max-width: 600px;
+    text-align: left;
+    margin-left: 20;
+    padding-right: 10px;
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}   
+
+.logo {
+    width: 70px;
+    height: 70px;
+    animation: rotateLogo 5s linear infinite;
+}
+
+.name {
+    width: 150px;
+    height: 130px;
+}
+
+h1 {
+    color: rgb(114, 1, 1);
+    font-size: 2.5rem;
+    
+    margin-left: 30px;
+}
+
+
+.container {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.material {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.material img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 0 40px rgb(1, 192, 255);
+    border-radius: 10px;
+}
+
+.text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    color: white;
+    padding: 20px;
+}
+
+.text h2 {
+    color: rgb(237, 5, 5);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text p {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.reverse .material {
+    flex-direction: row-reverse;
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        margin-left: 0;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-content h1,
+    .hero-content p {
+        margin-left: 0;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .name {
+        width: 120px;
+        height: 100px;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    
+    .text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .text p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .material {
+        gap: 20px;
+    }
+    
+    .header-content {
+        padding: 10px;
+    }
+}
+
+h1,h2:hover {
+    color: rgb(1, 192, 255);
+    transition: color 0.3s ease;
+}

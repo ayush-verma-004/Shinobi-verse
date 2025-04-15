@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container 1 Styles */
+.container1 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.logo {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 70px;
+    height: 70px;
+    animation: rotateLogo 5s linear infinite;
+}
+
+.name {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 130px;
+    height: 60px;
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container1 h1 {
+    color: rgb(114, 1, 1);
+    font-size: 50px;
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
+.container1 p {
+    color: rgb(177, 171, 171);
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+/* Video Containers */
+.container2, .container3, .container4 {
+    background-color: #000;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.material, .material1, .material2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 5%;
+ 
+}
+
+/* Reverse order for container3 */
+.container3 .material1 {
+    flex-direction: row-reverse;
+}
+
+.container2 img, .container3 img, .container4 img {
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 0 0 29px rgb(181, 3, 3);
+    border-radius: 10px;
+}
+
+.text, .text1, .text2 {
+    max-width: 400px;
+    color: rgb(102, 5, 5);
+}
+
+.text h2, .text1 h2, .text2 h2 {
+    color: rgb(237, 5, 5);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.text p, .text1 p, .text2 p {
+    color: inherit;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container2 img, .container3 img, .container4 img {
+        width: 800px;
+        height: 400px;
+    }
+    
+    .container1 h1 {
+        margin-top: 200px;
+        margin-left: 50px;
+    }
+    
+    .container1 p {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container2 img, .container3 img, .container4 img {
+        width: 600px;
+        height: 350px;
+    }
+    
+    .material, .material1, .material2 {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 h1 {
+        font-size: 40px;
+        margin-top: 150px;
+        margin-left: 30px;
+    }
+    
+    .container1 p {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .name {
+        width: 100px;
+        height: 40px;
+    }
+    
+    .material, .material1, .material2 {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    
+    .container3 .material1 {
+        flex-direction: column;
+    }
+    
+    .container2 img, .container3 img, .container4 img {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .text, .text1, .text2 {
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container1 h1 {
+        font-size: 30px;
+        margin-top: 100px;
+        margin-left: 15px;
+    }
+    
+    .container1 p {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    
+    .container2 img, .container3 img, .container4 img {
+        height: 250px;
+        
+    }
+    
+    .text h2, .text1 h2, .text2 h2 {
+        font-size: 24px;
+    }
+    
+    .text p, .text1 p, .text2 p {
+        font-size: 16px;
+    }
+}
+
+h1,h2:hover{
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 20px rgb(255, 0, 0), 0 0 30px rgb(255, 0, 0), 0 0 40px rgb(255, 0, 0), 0 0 50px rgb(255, 0, 0), 0 0 60px rgb(255, 0, 0), 0 0 70px rgb(255, 0, 0), 0 0 80px rgb(255, 0, 0);
+}
