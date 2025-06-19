@@ -57,7 +57,7 @@ You can double-click index.html or use a live server extension in VS Code.
 🔧 Usage
 Navigate through different sections (Characters, Episodes, Forum).
 
-Click on characters to view detailed profiles!
+Click on characters to view detailed profiles.
 
 Use the episode filter to search for your favorite arc.
 
